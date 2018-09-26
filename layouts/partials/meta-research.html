@@ -1,0 +1,14 @@
+{{$site := (.Site) }}
+{{$length := (len .Params.collaborators) }}
+A project by
+  {{ range $index, $authorname := .Params.collaborators }}
+    {{$author := index $site.Params.authors ($authorname) }}
+    <a href="{{ $site.BaseURL }}people/{{ $author.name | urlize | lower }}">{{ $author.name }}</a>{{ if lt $index (add $length -2) }},
+    {{ else if lt $index (add $length -1) }}
+      and
+    {{ end }}
+  {{ end }}
+<br />
+<!-- {{ partial "categories.html" .}} -->
+<br />
+<!-- {{ partial "tags.html" .}} -->

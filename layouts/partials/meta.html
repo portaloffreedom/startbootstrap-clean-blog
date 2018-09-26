@@ -2,7 +2,7 @@
   A {{ .ReadingTime }} minute read,
 {{ end }}
 {{$author := index .Site.Params.authors (.Params.author) }}
-Posted by <a href="{{ .Site.BaseURL }}authors/{{ $author.name | urlize | lower }}">{{ $author.name }}</a> on {{ dateFormat .Site.Params.DateForm .Date }}
+Posted by <a href="{{ .Site.BaseURL }}people/{{ $author.name | urlize | lower }}">{{ $author.name }}</a> on {{ dateFormat .Site.Params.DateForm .Date }}
 <br />
 {{ partial "categories.html" .}}
 <br />
