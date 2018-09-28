@@ -27,14 +27,20 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                   {{ .Content }}
-
-                  {{ with .Params.twitter }}
                   <p>
+                  Follow {{ $.Params.name }} on
+                  {{ with .Params.twitter }}
                       <a href="https://twitter.com/{{ substr . 1 }}">
-                          Follow {{ $.Params.name }} on Twitter
+                        Twitter
                       </a>
-                  </p>
                   {{ end }}
+                  ,
+                  {{ with .Params.github }}
+                      <a href="https://github.com/{{ . }}">
+                        Github
+                      </a>
+                  {{ end }}
+                  </p>
                 </div>
             </div>
         </div>
