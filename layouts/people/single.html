@@ -1,10 +1,11 @@
 {{ partial "header.html" .}}
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="position: relative; overflow: hidden;">
     {{ if isset .Params "image" }}
-      <header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}/{{ .Params.image }}')">
+        <div class="intro-header-background"  style="background-image: url('{{ .Site.BaseURL }}/{{ .Params.image }}')"></div>
       {{ else }}
-      <header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}/img/group.jpg')">
+        <div class="intro-header-background" style="background-image: url('{{ .Site.BaseURL }}/img/group.jpg')"></div>
     {{ end }}
       <div class="container">
         <div class="row">
